@@ -1,0 +1,16 @@
+<div class="servers-dashboard">
+  <div class="page-content">
+
+    <h1 id="dashboard-title">Servers</h1>
+    <mat-card id="servers-container">
+      <div 
+      *ngFor="let server of servers" 
+      [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
+      (click)="setCurrentServer(server)"
+      >
+        <app-server [data]="server"></app-server>
+      </div>
+    </mat-card> 
+     
+  </div>
+</div>

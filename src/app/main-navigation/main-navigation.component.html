@@ -1,0 +1,26 @@
+<div class="main-navigation">
+  <p class="muted" id="current-environment">Environment: {{currentEnvironment}}</p>
+  <button mat-button [matMenuTriggerFor]="environmentsMenu" [disableRipple]="true" class="menu-button">Environments</button>
+  <button mat-button [disableRipple]="true" class="menu-button">All Servers</button>
+  <button mat-button [matMenuTriggerFor]="serverMenu" [disableRipple]="true" class="menu-button highlight">Manage Server</button>
+  <button mat-button [disableRipple]="true" id="settings" class="menu-button">Settings</button>
+
+  
+
+
+
+
+
+
+
+  <mat-menu #environmentsMenu="matMenu">
+    <button mat-menu-item *ngFor="let environment of environments" (click)="updateCurrentEnvironment(environment.Name)">{{environment.Name}}</button>
+  </mat-menu>  
+
+  <mat-menu #serverMenu="matMenu">
+    <button mat-menu-item>SSH</button>
+    <button mat-menu-item>VHosts</button>
+    <button mat-menu-item>Storage</button>
+    <button mat-menu-item>SSL Certificates</button>
+  </mat-menu>  
+</div>

@@ -1,0 +1,40 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.main-navigation {
+  width: 100%;
+  padding: 3rem 2rem 2rem;
+  border-bottom: 0px solid black;
+  box-shadow: 0 4px 10px #00000036;
+  position: relative;
+  box-sizing: border-box;
+  #current-environment {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+  .menu-button {
+    position: relative;
+    color: #3e873a;
+    border: 1px solid #3e873a;
+    margin: 0 1rem;
+    padding: 1.5rem 2rem;
+    #current-environment {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      text-align: center;
+    }
+  }
+  .highlight {
+    background-color: #3e873a;
+    color: #fff;
+  }
+
+  #settings {
+    position: absolute;
+    right: 50px;
+    background-color: #326ba7;
+    border-color: #326ba7;
+    color: #fff;
+  }
+}

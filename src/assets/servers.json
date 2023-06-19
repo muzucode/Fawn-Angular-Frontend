@@ -1,0 +1,18 @@
+[
+  {
+    "Id":1423415,
+    "Name":"Loopback",
+    "Address":"127.0.0.1",
+    "PrivateKeyPath":"~/.ssh/github_rsa",
+    "GroupId":1,
+    "Description":"My description goes here"
+  },  
+  {
+    "Id":2123512352,
+    "Name":"Twofer",
+    "Address":"::1",
+    "PrivateKeyPath":"~/.ssh/github_rsa",
+    "GroupId":1,
+    "Description":"Another description"
+  }
+]

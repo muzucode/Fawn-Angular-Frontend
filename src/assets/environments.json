@@ -1,0 +1,16 @@
+[
+  {
+    "Id":"1",
+    "Name":"Default",
+    "ApiKey":"23lk5hl23hl3hjf9sd8af0982jfc",
+    "DebugMode":"True",
+    "Position":"1"
+  },   
+  {
+    "Id":"2",
+    "Name":"Secondary",
+    "ApiKey":"23lk5hl23hl3hjf9sd8af0982jfc",
+    "DebugMode":"False",
+    "Position":"2"
+  }
+]
