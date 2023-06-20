@@ -1,4 +1,7 @@
 <p class="id muted font-sm">#{{data.Id}}</p>
 <h2 class="name">{{data.Name}}</h2>
-<h3 class="address ipv4">IPv4: {{data.Address}}</h3>
-<h3 class="address ipv6">IPv6: {{data.Address}}</h3>
+<h3 class="muted address ipv4">IPv4: {{data.AddressIPv4}}</h3>
+<h3 class="muted address ipv6">IPv6: {{data.AddressIPv6.substring(20)}}</h3>
+<div class="distribution">
+  <img class="distribution__image" [src]="getDistributionLogoAssetPath(data.Distribution)"/>
+</div>

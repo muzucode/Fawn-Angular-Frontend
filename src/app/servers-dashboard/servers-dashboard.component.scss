@@ -13,17 +13,23 @@
       display: flex;
       flex-direction: row;
       padding: 2rem;
+      flex-wrap: wrap;
+      width: 1150px;
       .server {
-        border: 3px solid transparent;
+        position: relative;
         border-radius: 20px;
-        margin: 0 1rem;
+        margin: 1rem;
         width: 200px;
         height: 200px;
         padding: 1rem;
         box-shadow: 0 4px 5px #00000041;
+        overflow: hidden;
         &.is-current {
-          border: 3px solid cornflowerblue;
+          outline: 3px solid cornflowerblue;
           box-shadow: 0 4px 5px rgba(100, 148, 237, 0.52);
+        }
+        &:hover {
+          cursor: pointer;
         }
       }
     }

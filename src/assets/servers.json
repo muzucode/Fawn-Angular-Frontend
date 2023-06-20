@@ -1,18 +1,112 @@
 [
   {
-    "Id":1423415,
-    "Name":"Loopback",
-    "Address":"127.0.0.1",
-    "PrivateKeyPath":"~/.ssh/github_rsa",
-    "GroupId":1,
-    "Description":"My description goes here"
-  },  
+    "Id": 1423415,
+    "Name": "WebServer",
+    "AddressIPv4": "192.168.1.10",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+    "PrivateKeyPath": "/path/to/private_key1",
+    "GroupId": 1,
+    "Description": "This server hosts the company's website.",
+    "Distribution": "Ubuntu",
+    "DistributionVersion": "20.04"
+  },
   {
-    "Id":2123512352,
-    "Name":"Twofer",
-    "Address":"::1",
-    "PrivateKeyPath":"~/.ssh/github_rsa",
-    "GroupId":1,
-    "Description":"Another description"
+    "Id": 2123512352,
+    "Name": "DBServer",
+    "AddressIPv4": "10.0.0.5",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7335",
+    "PrivateKeyPath": "/path/to/private_key2",
+    "GroupId": 2,
+    "Description": "Database server for storing customer information.",
+    "Distribution": "CentOS",
+    "DistributionVersion": "8.4"
+  },
+  {
+    "Id": 3576984521,
+    "Name": "AppServer",
+    "AddressIPv4": "172.16.0.2",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7336",
+    "PrivateKeyPath": "/path/to/private_key3",
+    "GroupId": 3,
+    "Description": "Server responsible for running the company's main application.",
+    "Distribution": "Windows",
+    "DistributionVersion": "Server 2019"
+  },
+  {
+    "Id": 984736548,
+    "Name": "MailServer",
+    "AddressIPv4": "192.168.2.15",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7337",
+    "PrivateKeyPath": "/path/to/private_key4",
+    "GroupId": 4,
+    "Description": "Handles incoming and outgoing email communications.",
+    "Distribution": "Debian",
+    "DistributionVersion": "11"
+  },
+  {
+    "Id": 754328972,
+    "Name": "BackupServer",
+    "AddressIPv4": "10.0.0.20",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7338",
+    "PrivateKeyPath": "/path/to/private_key5",
+    "GroupId": 5,
+    "Description": "Responsible for regular backup and recovery operations.",
+    "Distribution": "macOS",
+    "DistributionVersion": "12.0"
+  },
+  {
+    "Id": 2985176423,
+    "Name": "AnalyticsServer",
+    "AddressIPv4": "192.168.3.7",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7339",
+    "PrivateKeyPath": "/path/to/private_key6",
+    "GroupId": 6,
+    "Description": "Collects and analyzes data for business intelligence.",
+    "Distribution": "Fedora",
+    "DistributionVersion": "34"
+  },
+  {
+    "Id": 189273465,
+    "Name": "FileServer",
+    "AddressIPv4": "10.0.0.50",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7340",
+    "PrivateKeyPath": "/path/to/private_key7",
+    "GroupId": 7,
+    "Description": "Centralized file storage and sharing for employees.",
+    "Distribution": "Ubuntu",
+    "DistributionVersion": "18.04"
+  },
+  {
+    "Id": 623874695,
+    "Name": "GameServer",
+    "AddressIPv4": "172.16.0.10",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7341",
+    "PrivateKeyPath": "/path/to/private_key8",
+    "GroupId": 8,
+    "Description": "Hosts multiplayer gaming sessions for users.",
+    "Distribution": "Arch",
+    "DistributionVersion": "2021.06.01"
+  },
+  {
+    "Id": 4203718956,
+    "Name": "VPNServer",
+    "AddressIPv4": "192.168.4.3",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7342",
+    "PrivateKeyPath": "/path/to/private_key9",
+    "GroupId": 9,
+    "Description": "Provides secure remote access to the company's network.",
+    "Distribution": "Windows",
+    "DistributionVersion": "Server 2016"
+  },
+  {
+    "Id": 514286397,
+    "Name": "TestServer",
+    "AddressIPv4": "10.0.0.100",
+    "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7343",
+    "PrivateKeyPath": "/path/to/private_key10",
+    "GroupId": 10,
+    "Description": "Dedicated server for testing new applications and configurations.",
+    "Distribution": "Ubuntu",
+    "DistributionVersion": "21.04"
   }
 ]

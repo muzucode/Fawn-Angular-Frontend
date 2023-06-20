@@ -1,7 +1,9 @@
 import { Server } from "src/types/server";
 
 export const TEST_SERVER: Server = {
-  Address:"127.0.0.1",
+  AddressIPv4:"127.0.0.1",
+  AddressIPv6:"::1",
+  Distribution: 'Ubuntu',
   Description: "My description",
   GroupId: 1,
   Id: 1,
