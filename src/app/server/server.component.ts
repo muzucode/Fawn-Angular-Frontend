@@ -9,8 +9,8 @@ import { ServersService } from '../servers.service';
 })
 export class ServerComponent {
 
-
   @Input() data!: Server
+  onlineStatus!: string
 
   getDistributionLogoAssetPath(key: string): string {
     let serverImages: {[index: string]: string} = {
@@ -26,4 +26,23 @@ export class ServerComponent {
     key = key.toLowerCase()
     return serverImages[key] 
   }
+
+  getServerOnlineStatus() {
+    let rng = Math.round(Math.random() * 100)
+    if(rng % 2 === 0) {
+      rng = Math.round(Math.random() * 100)
+      if(rng % 2 == 0) {
+        this.onlineStatus = 'Online'
+      } else {
+        this.onlineStatus = 'Pending'
+      }
+    } else {
+      this.onlineStatus = 'Offline'
+    }
+  }
+
+  ngOnInit() {
+    this.getServerOnlineStatus()
+  }
+
 }

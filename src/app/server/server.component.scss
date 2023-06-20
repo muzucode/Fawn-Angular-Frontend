@@ -1,3 +1,37 @@
+.online-status {
+  margin: .4rem 0;
+  &__text {
+    position: relative;
+    top: -1px;
+  }
+  .marker {
+    margin-right: 7px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  &.offline {
+    .marker {
+      background-color: red;
+      border: 1px solid rgb(255, 91, 91);
+      box-shadow: 0 0 5px red;
+    }
+  }  
+  &.online {
+    .marker {
+      background-color: #007724;
+      border: 1px solid #2a9c4d;
+      box-shadow: 0 0 5px #007724;
+    }
+  }  
+  &.pending {
+    .marker {
+      background-color: rgb(118, 118, 118);
+    }
+  }
+}
+
 .id {
   margin: 0;
   font-size: 12px;
@@ -14,13 +48,12 @@
 }
 
 .distribution {
-  width: 100%;
   margin: .5rem 0;
   position: absolute;
-  bottom: -35px;
-  left: -15px;
+  top: 10px;
+  right: 20px;
   &__image {
-    width: 100px;
-    opacity: .25;
+    width: 35px;
+    opacity: .3;
   }
 }
