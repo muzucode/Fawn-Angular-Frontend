@@ -12,13 +12,23 @@ import {MatCardModule} from '@angular/material/card';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ServerComponent } from './server/server.component';
+import { FileManagerComponent } from './file-manager/file-manager.component';
+import { SshComponent } from './ssh/ssh.component';
+import { VhostsComponent } from './vhosts/vhosts.component';
+import { MetricsComponent } from './metrics/metrics.component';
+import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavigationComponent,
     ServersDashboardComponent,
-    ServerComponent
+    ServerComponent,
+    FileManagerComponent,
+    SshComponent,
+    VhostsComponent,
+    MetricsComponent,
+    SslTlsComponent
   ],
   imports: [
     BrowserModule,
