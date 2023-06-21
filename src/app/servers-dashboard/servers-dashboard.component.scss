@@ -15,6 +15,7 @@
       padding: 2rem;
       flex-wrap: wrap;
       width: 1150px;
+      border-top: 15px solid #326BA7;
       .server {
         position: relative;
         border-radius: 20px;
@@ -24,6 +25,7 @@
         padding: 1rem;
         box-shadow: 0 4px 5px #00000041;
         overflow: hidden;
+        border-top: 8px solid #585858;
         &.is-current {
           outline: 3px solid cornflowerblue;
           box-shadow: 0 4px 5px rgba(100, 148, 237, 0.52);
