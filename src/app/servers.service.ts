@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
-import { catchError, retry, take } from 'rxjs/operators';
+import { catchError, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
 import { Server } from 'src/types/server';
 
@@ -18,21 +18,16 @@ export class ServersService {
   servers: BehaviorSubject<Server[]> = new BehaviorSubject<Server[]>([])
   currentServer: BehaviorSubject<Server> = new BehaviorSubject(TEST_SERVER)
 
-    // TODO: Implement with backend
-  fetchServers() {
-    this.http.get('assets/servers.json')
-    .pipe(take(1))
-    .subscribe({
-      next: (servers: any) => {
-        this.servers.next(servers)
-      },
-      error: (e) => {
-        console.error(e)
-      }
-    })
+  // TODO: Implement with backend
+  fetchServers(): Observable<Server[]> {
+    return this.http.get<Server[]>('assets/servers.json').pipe(
+      tap(servers => this.servers.next(servers))
+    );
   }
 
-  
+  getCurrentServer(): Observable<Server> {
+    return this.currentServer.asObservable();
+  }
   setCurrentServer(server: Server) {
     this.currentServer.next(server)
   }

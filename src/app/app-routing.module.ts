@@ -11,11 +11,14 @@ import { ServersResolver } from './servers.resolver';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ServersDashboardComponent
+    path: 'servers',
+    component: ServersDashboardComponent,
+    resolve: {
+      servers: ServersResolver
+    }
   },
   {
-    path: 'server/:serverId',
+    path: 'servers/:serverId',
     component: ServerProfileComponent,
     resolve: {
       servers: ServersResolver
