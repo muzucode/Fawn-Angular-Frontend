@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { EnvironmentsService } from '../environments.service';
+import { ServersService } from '../servers.service';
+import { Server } from 'src/types/server';
+import { Observable, Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,18 +13,26 @@ import { EnvironmentsService } from '../environments.service';
 })
 export class MainNavigationComponent {
   constructor(
-    private environmentsService: EnvironmentsService
+    private environmentsService: EnvironmentsService,
+    private serversService: ServersService,
   ){
 
   }
   environments: any
   currentEnvironment: any
+  currentServer!: Server
+  currentServerSubscription!: Subscription
 
   updateCurrentEnvironment(environment: any) {
     this.environmentsService.currentEnvironment = environment
   }
 
   ngOnInit  () {
+    this.currentServerSubscription = this.serversService.currentServer.subscribe({
+      next: (server: Server) => {
+        this.currentServer = server
+      }
+    })
     this.environmentsService.fetchEnvironments().subscribe(res => {
       this.environments = res
     })
@@ -29,5 +40,4 @@ export class MainNavigationComponent {
       this.currentEnvironment = env
     })
   }
-
 }
