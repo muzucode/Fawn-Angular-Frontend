@@ -17,6 +17,7 @@ import { SshComponent } from './ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
+import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
     SshComponent,
     VhostsComponent,
     MetricsComponent,
-    SslTlsComponent
+    SslTlsComponent,
+    ServerProfileComponent
   ],
   imports: [
     BrowserModule,

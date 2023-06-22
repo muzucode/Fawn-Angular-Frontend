@@ -28,6 +28,7 @@ export class ServerComponent {
   }
 
   getServerOnlineStatus() {
+    // TODO: Implement to check the server status through the backend
     let rng = Math.round(Math.random() * 100)
     if(rng % 2 === 0) {
       rng = Math.round(Math.random() * 100)

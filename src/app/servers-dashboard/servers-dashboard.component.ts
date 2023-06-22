@@ -24,9 +24,6 @@ export class ServersDashboardComponent {
   currentServerSubscription!: Subscription
 
   isCurrentServer(server: Server) {
-    console.log(this.currentServer === server)
-    console.log(this.currentServer.Id)
-    console.log(server.Id)
     return this.currentServer.Id === server.Id
   }
 
@@ -36,22 +33,23 @@ export class ServersDashboardComponent {
   }
   
   ngOnInit() {
-    this.currentServerSubscription = this.serversService.currentServer.pipe(take(1)).subscribe({
+
+    this.currentServerSubscription = this.serversService.currentServer
+    .pipe(take(1))
+    .subscribe({
       next: (server: Server) => {
         this.currentServer = server
         console.log(this.currentServer)
       }
     })
+
+    // Fetch servers once
     this.serversService.fetchServers()
-      .pipe(take(1))
-      .subscribe({
-        next: servers => {
-          this.servers = servers
-        },
-        error: e => {
-          console.error(e)
-        }
-      })
-    }
+
+    // Subscribe to the fetched servers
+    this.serversService.servers.subscribe(servers => {
+      this.servers = servers
+    })
+  }
 
 }
