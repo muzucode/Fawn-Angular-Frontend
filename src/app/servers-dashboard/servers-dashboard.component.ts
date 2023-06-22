@@ -21,7 +21,6 @@ export class ServersDashboardComponent {
   
   servers!: Server[]
   currentServer!: Server
-  currentServerSubscription!: Subscription
 
   isCurrentServer(server: Server) {
     return this.currentServer.Id === server.Id
@@ -34,12 +33,12 @@ export class ServersDashboardComponent {
   
   ngOnInit() {
 
-    this.currentServerSubscription = this.serversService.currentServer
+    // Subscribe to currentServer
+    this.serversService.currentServer
     .pipe(take(1))
     .subscribe({
       next: (server: Server) => {
         this.currentServer = server
-        console.log(this.currentServer)
       }
     })
 
@@ -50,6 +49,7 @@ export class ServersDashboardComponent {
     this.serversService.servers.subscribe(servers => {
       this.servers = servers
     })
+    
   }
 
 }

@@ -31,10 +31,21 @@ export class ServersService {
       }
     })
   }
+
   
   setCurrentServer(server: Server) {
     this.currentServer.next(server)
   }
 
+  getServerById(serverId: number): Server {
+    let s = {}
+    this.servers.subscribe(servers => {
+      console.log(servers)
+      s = (servers.find(s => s.Id === serverId)) as Server
+      console.log(s)
+    })
+
+    return s as Server
+  }
 
 }

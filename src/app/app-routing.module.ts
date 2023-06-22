@@ -7,6 +7,7 @@ import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
+import { ServersResolver } from './servers.resolver';
 
 const routes: Routes = [
   {
@@ -15,7 +16,10 @@ const routes: Routes = [
   },
   {
     path: 'server/:serverId',
-    component: ServerProfileComponent
+    component: ServerProfileComponent,
+    resolve: {
+      servers: ServersResolver
+    }
   },
   {
     path: 'file-manager', 
