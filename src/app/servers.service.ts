@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, of, throwError } from 'rxjs';
 import { catchError, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
 import { Server } from 'src/types/server';
@@ -17,6 +17,7 @@ export class ServersService {
 
   servers: BehaviorSubject<Server[]> = new BehaviorSubject<Server[]>([])
   currentServer: BehaviorSubject<Server> = new BehaviorSubject(TEST_SERVER)
+  isServerPageActive: BehaviorSubject<boolean> = new BehaviorSubject(false)
 
   // TODO: Implement with backend
   fetchServers(): Observable<Server[]> {
@@ -34,10 +35,12 @@ export class ServersService {
   setCurrentServer(server: Server) {
     this.currentServer.next(server)
   }
-
   fetchServer(serverId: string): Observable<Server> {
     console.log('Fetching server')
     return this.http.get<Server>(`assets/server/${serverId}.json`).pipe(take(1));
+  }
+  setIsServerPageActive(status: boolean) {
+    this.isServerPageActive.next(status)
   }
 
 }

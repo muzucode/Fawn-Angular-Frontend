@@ -9,6 +9,7 @@ import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 import { ServersResolver } from './servers.resolver';
 import { ServerResolver } from './server.resolver';
+import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
       server: ServerResolver,
     },
     children: [
+      {
+        path: '',
+        component: ServerOverviewComponent
+      },
       {
         path: 'file-manager', 
         component: FileManagerComponent

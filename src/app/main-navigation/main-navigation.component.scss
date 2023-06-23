@@ -30,6 +30,12 @@
     color: #fff;
   }
 
+  #manage-server {
+    &.hidden {
+      display: none;
+    }
+  }
+
   #settings {
     position: absolute;
     right: 50px;

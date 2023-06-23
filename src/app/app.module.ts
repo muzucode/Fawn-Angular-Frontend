@@ -18,6 +18,7 @@ import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
+import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ServerProfileComponent } from './server/server-profile/server-profile.c
     VhostsComponent,
     MetricsComponent,
     SslTlsComponent,
-    ServerProfileComponent
+    ServerProfileComponent,
+    ServerOverviewComponent
   ],
   imports: [
     BrowserModule,

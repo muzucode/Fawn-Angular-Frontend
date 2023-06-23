@@ -22,6 +22,7 @@ export class MainNavigationComponent {
   currentEnvironment: any
   currentServer!: Server
   currentServerSubscription!: Subscription
+  isServerPageActive: boolean = false
 
   updateCurrentEnvironment(environment: any) {
     this.environmentsService.currentEnvironment = environment
@@ -42,6 +43,10 @@ export class MainNavigationComponent {
     })
     this.environmentsService.currentEnvironment.subscribe(env => {
       this.currentEnvironment = env
+    })
+
+    this.serversService.isServerPageActive.subscribe(status => {
+      this.isServerPageActive = status
     })
   }
 }

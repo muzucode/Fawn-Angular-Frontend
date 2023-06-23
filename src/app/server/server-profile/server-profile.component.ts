@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ServersService } from 'src/app/servers.service';
 import { Server } from 'src/types/server';
@@ -11,10 +11,12 @@ import { Server } from 'src/types/server';
 export class ServerProfileComponent {
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private serversService: ServersService
   ) {}
 
   data!: any
+
 
   ngOnInit() {  
     // Set server data from resolver
@@ -23,5 +25,10 @@ export class ServerProfileComponent {
       this.data = data
     })
 
+    this.serversService.setIsServerPageActive(true)
+  }
+
+  ngOnDestroy() {
+    this.serversService.setIsServerPageActive(false)
   }
 }

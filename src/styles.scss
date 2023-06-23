@@ -9,6 +9,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 // Typography
+h1 {
+  font-size: 3rem !important;
+  margin: 0 0 2rem 0 !important;
+}
 h2 {
   margin: 0;
+}
+
+// Alignment
+.page-content {
+  padding: 3rem 2rem;
+  .main-section {
+    max-width: 1100px;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+}
+.d-flex {
+  display: flex;
+  flex-direction: row;
 }

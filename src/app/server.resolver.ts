@@ -13,6 +13,7 @@ export const ServerResolver: ResolveFn<Server> =
       route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
       console.log('Entered ServerResolver')
       const serversService: ServersService = inject(ServersService)
+      
       return serversService.fetchServer(route.paramMap.get('serverId')!)
       .pipe(
         take(1),
