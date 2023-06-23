@@ -1,0 +1,11 @@
+{
+  "Id": 1423415,
+  "Name": "WebServer",
+  "AddressIPv4": "192.168.1.10",
+  "AddressIPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+  "PrivateKeyPath": "/path/to/private_key1",
+  "GroupId": 1,
+  "Description": "This server hosts the company's website.",
+  "Distribution": "Ubuntu",
+  "DistributionVersion": "20.04"
+}

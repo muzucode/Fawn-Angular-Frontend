@@ -6,7 +6,6 @@
       <div 
       *ngFor="let server of servers" 
       [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
-      (click)="setCurrentServer(server)"
       [routerLink]="['/servers', server.Id]"
       >
         <app-server [data]="server"></app-server>

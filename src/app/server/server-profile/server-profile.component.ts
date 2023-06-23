@@ -11,15 +11,17 @@ import { Server } from 'src/types/server';
 export class ServerProfileComponent {
 
   constructor(
-    private serversService: ServersService,
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) {}
 
-  data!: Server
+  data!: any
 
-  ngOnInit() {
-    let serverId = (this.route.snapshot.paramMap.get('serverId')) as string
-    this.data = this.serversService.getServerById(+serverId)
-    console.log(this.data)
+  ngOnInit() {  
+    // Set server data from resolver
+    this.activatedRoute.data.subscribe(data => {
+      console.log(data)
+      this.data = data
+    })
+
   }
 }

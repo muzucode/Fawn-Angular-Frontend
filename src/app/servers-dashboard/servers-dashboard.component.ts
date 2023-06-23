@@ -4,6 +4,7 @@ import { ServersService } from '../servers.service';
 import { Observable, Subscription, map, take } from 'rxjs';
 import { Server } from 'src/types/server';
 import { TEST_SERVER } from 'src/dummies/dummies';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-servers-dashboard',
@@ -13,8 +14,8 @@ import { TEST_SERVER } from 'src/dummies/dummies';
 export class ServersDashboardComponent {
   
   constructor(
-    private serversService: ServersService
-    
+    private serversService: ServersService,
+    private route: ActivatedRoute,
     ) {
     
   }
@@ -24,11 +25,6 @@ export class ServersDashboardComponent {
 
   isCurrentServer(server: Server) {
     return this.currentServer.Id === server.Id
-  }
-
-  setCurrentServer(server: Server) {
-    this.currentServer = server
-    this.serversService.setCurrentServer(server)
   }
   
   ngOnInit() {
@@ -42,12 +38,9 @@ export class ServersDashboardComponent {
       }
     })
 
-    // Fetch servers once
-    this.serversService.fetchServers()
-
     // Subscribe to the fetched servers
     this.serversService.servers.subscribe(servers => {
-      this.servers = servers
+      this.servers = this.route.snapshot.data['servers']
     })
     
   }

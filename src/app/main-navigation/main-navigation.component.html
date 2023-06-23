@@ -18,10 +18,10 @@
   </mat-menu>  
 
   <mat-menu #serverMenu="matMenu">
-    <button mat-menu-item routerLink="/file-manager">File Manager</button>
-    <button mat-menu-item routerLink="/ssh">SSH</button>
-    <button mat-menu-item routerLink="/vhosts">VHosts</button>
-    <button mat-menu-item routerLink="/metrics">Metrics</button>
-    <button mat-menu-item routerLink="/ssl-tls">SSL Certificates</button>
+    <button mat-menu-item [routerLink]="getRouterLink('file-manager')">File Manager</button>
+    <button mat-menu-item [routerLink]="getRouterLink('ssh')">SSH</button>
+    <button mat-menu-item [routerLink]="getRouterLink('vhosts')">VHosts</button>
+    <button mat-menu-item [routerLink]="getRouterLink('metrics')">Metrics</button>
+    <button mat-menu-item [routerLink]="getRouterLink('ssl-tls')">SSL Certificates</button>
   </mat-menu>  
 </div>

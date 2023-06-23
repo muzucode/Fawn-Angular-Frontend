@@ -8,6 +8,7 @@ import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 import { ServersResolver } from './servers.resolver';
+import { ServerResolver } from './server.resolver';
 
 const routes: Routes = [
   {
@@ -15,34 +16,36 @@ const routes: Routes = [
     component: ServersDashboardComponent,
     resolve: {
       servers: ServersResolver
-    }
+    },
   },
   {
     path: 'servers/:serverId',
     component: ServerProfileComponent,
     resolve: {
-      servers: ServersResolver
-    }
-  },
-  {
-    path: 'file-manager', 
-    component: FileManagerComponent
-  },  
-  {
-    path: 'ssh', 
-    component: SshComponent
-  },  
-  {
-    path: 'vhosts', 
-    component: VhostsComponent
-  },
-  {
-    path: 'metrics', 
-    component: MetricsComponent
-  },
-  {
-    path: 'ssl-tls', 
-    component: SslTlsComponent
+      server: ServerResolver,
+    },
+    children: [
+      {
+        path: 'file-manager', 
+        component: FileManagerComponent
+      },  
+      {
+        path: 'ssh', 
+        component: SshComponent
+      },  
+      {
+        path: 'vhosts', 
+        component: VhostsComponent
+      },
+      {
+        path: 'metrics', 
+        component: MetricsComponent
+      },
+      {
+        path: 'ssl-tls', 
+        component: SslTlsComponent
+      },
+    ]
   },
 ];
 

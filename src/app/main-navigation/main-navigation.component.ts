@@ -27,6 +27,10 @@ export class MainNavigationComponent {
     this.environmentsService.currentEnvironment = environment
   }
 
+  getRouterLink(routePath: string): string {
+    return `/servers/${this.currentServer.Id}/${routePath}`;
+  }
+
   ngOnInit  () {
     this.currentServerSubscription = this.serversService.currentServer.subscribe({
       next: (server: Server) => {

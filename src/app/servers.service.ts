@@ -20,10 +20,13 @@ export class ServersService {
 
   // TODO: Implement with backend
   fetchServers(): Observable<Server[]> {
+    console.log('Fetching servers...')
     return this.http.get<Server[]>('assets/servers.json').pipe(
+      take(1),
       tap(servers => this.servers.next(servers))
     );
   }
+
 
   getCurrentServer(): Observable<Server> {
     return this.currentServer.asObservable();
@@ -32,15 +35,9 @@ export class ServersService {
     this.currentServer.next(server)
   }
 
-  getServerById(serverId: number): Server {
-    let s = {}
-    this.servers.subscribe(servers => {
-      console.log(servers)
-      s = (servers.find(s => s.Id === serverId)) as Server
-      console.log(s)
-    })
-
-    return s as Server
+  fetchServer(serverId: string): Observable<Server> {
+    console.log('Fetching server')
+    return this.http.get<Server>(`assets/server/${serverId}.json`).pipe(take(1));
   }
 
 }
