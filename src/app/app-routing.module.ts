@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FileManagerComponent } from './file-manager/file-manager.component';
+import { FileManagerComponent } from './server/server-profile/file-manager/file-manager.component';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component';
 import { SshComponent } from './ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';

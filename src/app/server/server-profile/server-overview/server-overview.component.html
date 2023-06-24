@@ -1,7 +1,28 @@
 <div id="server-headline" class="d-flex">
+  <div class="online-status online"></div>
   <h1>{{data.Name}}</h1>
   <span id="server-id" class="muted">#{{data.Id}}</span>
 </div>
-<p>{{data.AddressIPv4}}</p>
-<p>{{data.AddressIPv6}}</p>
-<p>{{data.Name}}</p>
+
+<div id="server-details">
+  <h3>IPv4: {{data.AddressIPv4}}</h3>
+  <h3>IPv6: {{data.AddressIPv6}}</h3>
+  <h3>Distribution: <b>{{data.Distribution}} {{data.DistributionVersion}}</b></h3>
+</div>
+
+
+<section class="profile-section">
+  <h2>Connect</h2>
+</section>
+
+<section class="profile-section">
+  <h2>Web Hosting</h2>
+</section>
+
+<section class="profile-section">
+  <h2>Database</h2>
+</section>
+
+<section class="profile-section">
+  <h2>Metrics</h2>
+</section>

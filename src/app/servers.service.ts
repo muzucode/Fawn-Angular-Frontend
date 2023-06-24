@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, of, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, from, of, throwError } from 'rxjs';
 import { catchError, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
+import { File } from 'src/types/file';
 import { Server } from 'src/types/server';
 
 
@@ -41,6 +42,16 @@ export class ServersService {
   }
   setIsServerPageActive(status: boolean) {
     this.isServerPageActive.next(status)
+  }
+  fetchFilesFromDir(dirPath: string): Observable<File> {
+    // TODO: Send API request with dirPath QSP
+    let files: File[] = [
+      {title: 'Sean.txt'},
+      {title: 'README.txt'},
+      {title: 'Caroline.txt'},
+    ]
+    
+    return from(files)
   }
 
 }

@@ -12,7 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ServerComponent } from './server/server.component';
-import { FileManagerComponent } from './file-manager/file-manager.component';
+import { FileManagerComponent } from './server/server-profile/file-manager/file-manager.component';
 import { SshComponent } from './ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
