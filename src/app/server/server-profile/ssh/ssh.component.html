@@ -1,0 +1,6 @@
+<div id="keypairs">
+  <div class="keypair" *ngFor="let keypair of keypairs">
+    <h2 class="label">{{keypair.label}}</h2><mat-icon class="icon mat-icon-outlined">key</mat-icon>
+    <p class="public-key muted">{{keypair.publicKey}}</p>
+  </div>  
+</div>

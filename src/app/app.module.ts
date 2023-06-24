@@ -13,12 +13,13 @@ import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard
 import { HttpClientModule } from '@angular/common/http';
 import { ServerComponent } from './server/server.component';
 import { FileManagerComponent } from './server/server-profile/file-manager/file-manager.component';
-import { SshComponent } from './ssh/ssh.component';
+import { SshComponent } from './server/server-profile/ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ServerOverviewComponent } from './server/server-profile/server-overview
     HttpClientModule,
     MatMenuModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+#keypairs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .keypair {
+    padding: 1rem 2rem;
+    // border: 1px solid #0000ff;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px #0000002c;
+    width: 25%;
+    border-top: 10px solid #326BA7;
+    .label {
+      text-transform: capitalize;
+      display: inline;
+    }
+    .icon {
+      display: inline;
+      position: relative;
+      top: 5px;
+      left: 5px;
+    }
+    .public-key {
+      word-wrap: break-word;
+    }
+  }
+}

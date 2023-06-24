@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FileManagerComponent } from './server/server-profile/file-manager/file-manager.component';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component';
-import { SshComponent } from './ssh/ssh.component';
+import { SshComponent } from './server/server-profile/ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';
 import { MetricsComponent } from './metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';

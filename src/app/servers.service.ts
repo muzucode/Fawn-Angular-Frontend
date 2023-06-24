@@ -5,6 +5,7 @@ import { catchError, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
 import { File } from 'src/types/file';
 import { Server } from 'src/types/server';
+import { SSHKeypair } from 'src/types/ssh-keypair';
 
 
 @Injectable({
@@ -52,6 +53,37 @@ export class ServersService {
     ]
     
     return from(files)
+  }
+  fetchSSHKeysOnServer(): Observable<SSHKeypair> {
+    let keypairs: Observable<SSHKeypair> = from<SSHKeypair[]>([
+      {
+        label: 'github',
+        privateKey: 'kjhfkjgvhgcvxherswea56r6tgilt9dsw34azto7tftdht',
+        publicKey: 'MEgCQQCo9+BpMRYQ/dLDS2CyJxRF+j6ctbT3Qp84+KeFhnii7NT7fELilKUSnxS30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE='
+      },
+      {
+        label: 'bitbucket',
+        privateKey: 'kjhfkjgvhgcvxherswea56r6tgilt9dsw34azto7tftdht',
+        publicKey: 'MEgCQQCo9+BpMRYQ/L3DS2CyJxRF+j6ctbT3Qp84+KeFhnii7NT7fELilKUSnxS30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE='
+      },
+      {
+        label: 'Mercury',
+        privateKey: 'kjhfkjgvhgcvxherswea56r6tgilt9dsw34azto7tftdht',
+        publicKey: 'MEgCQQCo9+BpMhQ/dL3DS2CyJxRF+j6ctbT3Qp84+KeFhnii7NT7fELilKUSnxS30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE='
+      },      
+      {
+        label: 'Jupiter',
+        privateKey: 'kjhfkjgvhgcvxherswea56r6tgilt9dsw34azto7tftdht',
+        publicKey: 'MEgCQQCo9+BpRYQ/dL3DS2CyJxRF+j6ctbT3Qp84+KeFhnii7NT7fELilKUSnxS30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE='
+      },      
+      {
+        label: 'Saturn',
+        privateKey: 'kjhfkjgvhgcvxherswea56r6tgilt9dsw34azto7tftdht',
+        publicKey: 'MEgCQQCo9+BpMRYQ/dL3DS2CyxRF+j6ctbT3Qp84+KeFhnii7NT7fELilKUSnxS30WAvQCCo2yU1orfgqr41mM70MBAgMBAAE='
+      },
+    ])
+
+    return keypairs
   }
 
 }

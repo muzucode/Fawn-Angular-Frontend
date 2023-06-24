@@ -18,6 +18,7 @@
   </mat-menu>  
 
   <mat-menu #serverMenu="matMenu">
+    <button mat-menu-item [routerLink]="getRouterLink('')">Overview</button>
     <button mat-menu-item [routerLink]="getRouterLink('file-manager')">File Manager</button>
     <button mat-menu-item [routerLink]="getRouterLink('ssh')">SSH</button>
     <button mat-menu-item [routerLink]="getRouterLink('vhosts')">VHosts</button>
