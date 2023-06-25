@@ -1,3 +1,40 @@
-<div class="main-section">
-  <router-outlet></router-outlet>
+<div id="toolbar">
+  <h2 [routerLink]="['./']">{{data.server.Name}}</h2>
+  <button mat-button [matMenuTriggerFor]="connectMenu" [disableRipple]="true" id="manage-server">Connect</button>
+  <button mat-button [disableRipple]="true" id="file-manager" [routerLink]="['file-manager']">File Manager</button>
+  <button mat-button [disableRipple]="true" id="database" [routerLink]="['database']">Database</button>
+  <button mat-button [matMenuTriggerFor]="webMenu" [disableRipple]="true" id="nginx-apache" class="menu-button">Nginx/Apache</button>
+  <button mat-button [matMenuTriggerFor]="networkMenu" [disableRipple]="true" id="network" class="menu-button">Network</button>
+  <button mat-button [matMenuTriggerFor]="securityMenu" [disableRipple]="true" id="security" class="menu-button">Security</button>
+  <button mat-button [matMenuTriggerFor]="metricsMenu" [disableRipple]="true" id="metrics" class="menu-button">Metrics</button>
+
 </div>
+
+<div class="outlet-wrapper">
+  <router-outlet></router-outlet>
+
+</div>
+
+
+
+<mat-menu #connectMenu="matMenu">
+  <button mat-menu-item [routerLink]="['connect/connect-to-server']">Connect to Server</button>
+  <button mat-menu-item [routerLink]="['connect/ssh']">Configure SSH Keys</button>
+</mat-menu> 
+<mat-menu #webMenu="matMenu">
+  <button mat-menu-item >Nginx Config</button>
+  <button mat-menu-item >Apache Config</button>
+</mat-menu> 
+<mat-menu #networkMenu="matMenu">
+  <button mat-menu-item >Ports</button>
+  <button mat-menu-item>VHosts</button>
+</mat-menu> 
+<mat-menu #securityMenu="matMenu">
+  <button mat-menu-item>Firewall</button>
+  <button mat-menu-item>SSL Certificates</button>
+  <button mat-menu-item>SSL Certificates</button>
+</mat-menu> 
+<mat-menu #metricsMenu="matMenu">
+  <button mat-menu-item [routerLink]="['metrics/dashboard']">Dashboard</button>
+  <button mat-menu-item [routerLink]="['metrics/disk-usage']">Disk Usage</button>
+</mat-menu> 

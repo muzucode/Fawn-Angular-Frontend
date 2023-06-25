@@ -15,11 +15,13 @@ import { ServerComponent } from './server/server.component';
 import { FileManagerComponent } from './server/server-profile/file-manager/file-manager.component';
 import { SshComponent } from './server/server-profile/ssh/ssh.component';
 import { VhostsComponent } from './vhosts/vhosts.component';
-import { MetricsComponent } from './metrics/metrics.component';
+import { MetricsComponent } from './server/server-profile/metrics/metrics.component';
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ConnectToServerComponent } from './server/server-profile/connect-to-server/connect-to-server.component';
+import { DatabaseComponent } from './server/server-profile/database/database.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { MatIconModule } from '@angular/material/icon';
     MetricsComponent,
     SslTlsComponent,
     ServerProfileComponent,
-    ServerOverviewComponent
+    ServerOverviewComponent,
+    ConnectToServerComponent,
+    DatabaseComponent
   ],
   imports: [
     BrowserModule,

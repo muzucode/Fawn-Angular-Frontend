@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
 
 // Colors
 .muted {
@@ -17,6 +20,7 @@ h1 {
 // Alignment
 .page-content {
   padding: 3rem 2rem;
+  position: relative;
   .main-section {
     max-width: 1100px;
     padding: 2rem;
@@ -33,4 +37,7 @@ h1 {
   'wght' 400,
   'GRAD' 0,
   'opsz' 40
+}
+* {
+  box-sizing: border-box;
 }

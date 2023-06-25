@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { take, tap } from 'rxjs';
 import { ServersService } from 'src/app/servers.service';
 
@@ -10,8 +11,11 @@ import { ServersService } from 'src/app/servers.service';
 export class FileManagerComponent {
 
   constructor(
-    private serversService: ServersService
-  ){}
+    private serversService: ServersService,
+    private activatedRoute: ActivatedRoute,
+  ){
+    this.serversService.setActiveManagementView(this.activatedRoute.snapshot.data['title'])
+  }
 
   files: any[] = []
 
@@ -23,6 +27,7 @@ export class FileManagerComponent {
     .subscribe(file => {
       this.files.push(file)
     }).unsubscribe()
+
   }
 
 }

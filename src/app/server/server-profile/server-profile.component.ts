@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs';
 import { ServersService } from 'src/app/servers.service';
 import { Server } from 'src/types/server';
 
@@ -13,10 +14,11 @@ export class ServerProfileComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private serversService: ServersService
-  ) {}
+  ) {
+    this.serversService.setActiveManagementView('Overview')
+  }
 
   data!: any
-
 
   ngOnInit() {  
     // Set server data from resolver
@@ -24,11 +26,9 @@ export class ServerProfileComponent {
       console.log(data)
       this.data = data
     })
-
-    this.serversService.setIsServerPageActive(true)
   }
 
   ngOnDestroy() {
-    this.serversService.setIsServerPageActive(false)
+
   }
 }

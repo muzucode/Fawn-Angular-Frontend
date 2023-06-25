@@ -1,16 +1,10 @@
-<div class="main-navigation">
-  <p class="muted" id="current-environment">Environment: {{currentEnvironment}}</p>
+<div id="toolbar" class="main-navigation">
+  <mat-icon class="icon mat-icon-outlined" id="logo">landscape</mat-icon>
   <button mat-button [matMenuTriggerFor]="environmentsMenu" [disableRipple]="true" class="menu-button">Environments</button>
   <button mat-button [disableRipple]="true" class="menu-button" routerLink="/servers">All Servers</button>
   <button mat-button [matMenuTriggerFor]="serverMenu" [disableRipple]="true" id="manage-server" [class]="['menu-button', 'highlight', isServerPageActive ? '' : 'hidden']">Manage Server</button>
   <button mat-button [disableRipple]="true" id="settings" class="menu-button">Settings</button>
-  <div>Current server: {{currentServer.Name}}</div>
   
-
-
-
-
-
 
 
   <mat-menu #environmentsMenu="matMenu">

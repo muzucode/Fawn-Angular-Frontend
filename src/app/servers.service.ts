@@ -20,6 +20,7 @@ export class ServersService {
   servers: BehaviorSubject<Server[]> = new BehaviorSubject<Server[]>([])
   currentServer: BehaviorSubject<Server> = new BehaviorSubject(TEST_SERVER)
   isServerPageActive: BehaviorSubject<boolean> = new BehaviorSubject(false)
+  activeManagementView: BehaviorSubject<string> = new BehaviorSubject('Default')
 
   // TODO: Implement with backend
   fetchServers(): Observable<Server[]> {
@@ -84,6 +85,12 @@ export class ServersService {
     ])
 
     return keypairs
+  }
+  setActiveManagementView(viewTitle: string) {
+    this.activeManagementView.next(viewTitle)
+  }
+  getActiveManagementView(): BehaviorSubject<string> {
+    return this.activeManagementView
   }
 
 }

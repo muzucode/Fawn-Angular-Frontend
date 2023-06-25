@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { ServersService } from 'src/app/servers.service';
 import { SSHKeypair } from 'src/types/ssh-keypair';
@@ -10,7 +11,8 @@ import { SSHKeypair } from 'src/types/ssh-keypair';
 })
 export class SshComponent {
   constructor(
-    private serversService: ServersService
+    private serversService: ServersService,
+    private activatedRoute: ActivatedRoute,
   ){}
 
   keypairs: SSHKeypair[] = []
@@ -24,5 +26,7 @@ export class SshComponent {
     .subscribe(keypair => {
       this.keypairs.push(keypair)
     })
+
+    this.serversService.setActiveManagementView(this.activatedRoute.snapshot.data['title'])
   }
 }
