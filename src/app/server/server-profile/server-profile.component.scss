@@ -1,5 +1,7 @@
+@import 'src/styles/colors';
+
 #toolbar {
-  background-color: #326BA7;
+  background-color: $blue;
   color: #fff;
   font-size: 1.5rem;
   position: absolute;

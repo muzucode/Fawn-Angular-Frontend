@@ -1,7 +1,6 @@
 <div class="servers-dashboard">
-  <div class="main-section">
     <h1 id="dashboard-title">Servers</h1>
-    <mat-card id="servers-container">
+    <div id="servers-container">
       <div 
       *ngFor="let server of servers" 
       [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
@@ -9,7 +8,5 @@
       >
         <app-server [data]="server"></app-server>
       </div>
-    </mat-card> 
-     
-  </div>
+    </div> 
 </div>

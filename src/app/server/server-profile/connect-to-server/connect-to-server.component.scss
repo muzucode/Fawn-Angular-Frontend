@@ -1,0 +1,33 @@
+@import 'src/styles/colors';
+
+section {
+  mat-card {
+    width: 500px;
+    padding: 1rem;
+    background-color: $blue;
+    color: #fff;
+    mat-card-header {
+
+    }
+    mat-card-content {
+      p {
+        font-weight: 100;
+        background-color:#26588d;
+        width: fit-content;
+        padding: .2rem .9rem;
+        line-height: 30px;
+        display: inline-block;
+      }
+      span mat-icon {
+        font-size: 20px;
+        position: relative;
+        top: 9px;
+        left: 12px;
+        color: #fff;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

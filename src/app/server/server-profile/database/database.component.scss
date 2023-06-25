@@ -1,0 +1,39 @@
+@import 'src/styles/colors';
+
+#database-list {
+  width: 300px;
+  height: 600px;
+  background-color: #fff;
+  border-left: 12px solid $blue;
+  overflow-y: scroll;
+  box-shadow: 0 2px 5px #46464645;
+  border-radius: 5px;
+  .item {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.121);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: .5rem 1rem;
+    flex-direction: column;
+    .name {
+
+    }
+    .details {
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+      .distribution {
+        margin-right: 5px;
+      }
+      .size {
+
+      }
+    }
+    &:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+  }
+}

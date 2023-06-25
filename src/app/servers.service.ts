@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, from, of, throwError } from 'rxjs';
 import { catchError, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
+import { Database } from 'src/types/database';
 import { File } from 'src/types/file';
 import { Server } from 'src/types/server';
 import { SSHKeypair } from 'src/types/ssh-keypair';
@@ -85,6 +86,41 @@ export class ServersService {
     ])
 
     return keypairs
+  }
+  fetchDatabasesOnServer(): Observable<Database> {
+    return from<Database[]>([
+      {
+        name: 'seanshickey',
+        distribution: 'MySQL',
+        distributionVersion: '18.1',
+        size: '56'
+      },
+      {
+        name: 'seanshickey',
+        distribution: 'MySQL',
+        distributionVersion: '18.1',
+        size: '56'
+      },
+      {
+        name: 'seanshickey',
+        distribution: 'MySQL',
+        distributionVersion: '18.1',
+        size: '56'
+      },
+      {
+        name: 'seanshickey',
+        distribution: 'MySQL',
+        distributionVersion: '18.1',
+        size: '56'
+      },
+      {
+        name: 'seanshickey',
+        distribution: 'MySQL',
+        distributionVersion: '18.1',
+        size: '56'
+      },
+      
+    ])
   }
   setActiveManagementView(viewTitle: string) {
     this.activeManagementView.next(viewTitle)

@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'colors';
 
 html, body { height: 100%; }
 body { 
@@ -15,6 +15,15 @@ body {
 h1 {
   font-size: 3rem !important;
   margin: 0 0 2rem 0 !important;
+}
+h2.section-heading {
+  color: #3E873A;
+  width: 100%;
+  font-weight: 300;
+  border-bottom: 1px solid #ace4ab;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  padding: .8rem 0;
 }
 
 // Alignment

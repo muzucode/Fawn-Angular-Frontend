@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ServersService } from 'src/app/servers.service';
+import { Database } from 'src/types/database';
 
 @Component({
   selector: 'app-database',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class DatabaseComponent {
 
+  constructor(
+    private serversSerivce: ServersService
+  ){}
+
+  databases: Database[] = []
+
+  ngOnInit() {
+    this.serversSerivce.fetchDatabasesOnServer()
+    .pipe()
+    .subscribe(database => {
+      console.log(database)
+      this.databases.push(database)
+    })
+  }
 }

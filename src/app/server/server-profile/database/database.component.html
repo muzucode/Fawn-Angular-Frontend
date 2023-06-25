@@ -1,1 +1,11 @@
 <h2>Databases</h2>
+
+<div id="database-list">
+  <div *ngFor="let database of databases" class="item">
+    <div class="name">{{database.name}}</div>
+    <div class="details">
+      <div class="distribution muted">{{database.distribution}}{{database.distributionVersion}}</div>
+      <div class="size muted">{{database.size}}kb</div>
+    </div>
+  </div>
+</div> 
