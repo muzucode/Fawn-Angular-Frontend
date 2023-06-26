@@ -14,6 +14,7 @@ export class DatabaseComponent {
   ){}
 
   databases: Database[] = []
+  currentDatabase!: Database
 
   ngOnInit() {
     this.serversSerivce.fetchDatabasesOnServer()

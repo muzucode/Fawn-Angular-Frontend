@@ -1,5 +1,10 @@
 @import 'src/styles/colors';
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 #database-list {
   width: 300px;
   height: 600px;
@@ -35,5 +40,26 @@
       cursor: pointer;
     }
 
+  }
+}
+
+#database-overview {
+  padding: 0 3rem;
+  .name {
+    display: inline
+  }
+  .size {
+    font-size: 1.4rem;
+    display: inline-block;
+    font-weight: 300;
+    position: relative;
+    bottom: 2px;
+    left: 10px;
+  }
+  .backup {
+    background-color: $blue;
+    color: #fff;
+    margin: -1rem 0 0 3rem;
+    padding: 1.3rem;
   }
 }
