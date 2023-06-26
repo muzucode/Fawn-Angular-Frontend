@@ -1,4 +1,4 @@
-@import 'src/styles/colors';
+@import 'colors';
 
 section {
   mat-card {
@@ -6,13 +6,10 @@ section {
     padding: 1rem;
     background-color: $blue;
     color: #fff;
-    mat-card-header {
-
-    }
     mat-card-content {
       p {
         font-weight: 100;
-        background-color:#26588d;
+        background-color: $darkblue;
         width: fit-content;
         padding: .2rem .9rem;
         line-height: 30px;
