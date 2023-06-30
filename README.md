@@ -1,4 +1,4 @@
-# Fawn Frontend
+# Fawn Frontend (v1)
 
 A frontend for the server management solution, Fawn.
 
