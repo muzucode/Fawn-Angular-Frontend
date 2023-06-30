@@ -26,9 +26,12 @@ export class ServersService {
   // TODO: Implement with backend
   fetchServers(): Observable<Server[]> {
     console.log('Fetching servers...')
-    return this.http.get<Server[]>('assets/servers.json').pipe(
+    return this.http.get<Server[]>('/api/servers').pipe(
       take(1),
-      tap(servers => this.servers.next(servers))
+      tap(servers => {
+        console.log(servers)
+        this.servers.next(servers)
+      })
     );
   }
 
