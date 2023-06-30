@@ -49,9 +49,16 @@ export class ServersService {
   fetchFilesFromDir(dirPath: string): Observable<File> {
     // TODO: Send API request with dirPath QSP
     let files: File[] = [
-      {title: 'Sean.txt'},
+      {title: 'File1.txt'},
       {title: 'README.txt'},
-      {title: 'Caroline.txt'},
+      {title: 'Another.txt'},
+      {title: 'Lorem.txt'},
+      {title: 'Ipsum.txt'},      
+      {title: 'File1.txt'},
+      {title: 'README.txt'},
+      {title: 'Another.txt'},
+      {title: 'Lorem.txt'},
+      {title: 'Ipsum.txt'},
     ]
     
     return from(files)
@@ -90,31 +97,31 @@ export class ServersService {
   fetchDatabasesOnServer(): Observable<Database> {
     return from<Database[]>([
       {
-        name: 'seanshickey',
+        name: 'myfirstdb',
         distribution: 'MySQL',
         distributionVersion: '18.1',
         size: '56'
       },
       {
-        name: 'seanshickey',
+        name: 'myfirstdb',
         distribution: 'MySQL',
         distributionVersion: '18.1',
         size: '56'
       },
       {
-        name: 'seanshickey',
+        name: 'myfirstdb',
         distribution: 'MySQL',
         distributionVersion: '18.1',
         size: '56'
       },
       {
-        name: 'seanshickey',
+        name: 'myfirstdb',
         distribution: 'MySQL',
         distributionVersion: '18.1',
         size: '56'
       },
       {
-        name: 'seanshickey',
+        name: 'myfirstdb',
         distribution: 'MySQL',
         distributionVersion: '18.1',
         size: '56'
