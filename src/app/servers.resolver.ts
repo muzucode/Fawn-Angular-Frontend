@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
+import { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 import { ServersService } from './servers.service';
 import { Server } from '../types/server';
 import { Observable, take, tap } from 'rxjs';

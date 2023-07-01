@@ -20,5 +20,7 @@ export class ConnectToServerComponent {
     })
   }
 
-  copyCommand()
+  copyCommand() {
+    
+  }
 }
