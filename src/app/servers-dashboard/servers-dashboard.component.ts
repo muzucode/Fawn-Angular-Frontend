@@ -22,6 +22,7 @@ export class ServersDashboardComponent {
   
   servers!: Server[]
   currentServer!: Server
+  showSpinner: boolean = true
 
   isCurrentServer(server: Server) {
     return this.currentServer.Id === server.Id

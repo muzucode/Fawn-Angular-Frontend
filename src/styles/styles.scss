@@ -1,9 +1,10 @@
 @import 'colors';
 
-html, body { height: 100%; }
+html, body, :host { height: 100%; }
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
  }
 
 // Colors
@@ -49,4 +50,12 @@ h2.section-heading {
 }
 * {
   box-sizing: border-box;
+}
+
+
+
+
+// Material Spinner
+.mat-mdc-progress-spinner circle {
+  stroke: $blue;
 }

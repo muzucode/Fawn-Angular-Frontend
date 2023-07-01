@@ -1,3 +1,5 @@
+@import 'src/styles/colors.scss';
+
 .servers-dashboard {
   #dashboard-title {
     font-family: 'Roboto';
@@ -11,7 +13,7 @@
       position: relative;
       border-radius: 20px;
       margin: 1rem;
-      width: 200px;
+      width: 250px;
       height: 200px;
       padding: 1rem;
       box-shadow: 0 4px 5px #00000041;
@@ -22,4 +24,10 @@
       }
     }
   }
+}
+
+.spinner {
+  width: 50px !important;
+  height: 50px !important;
+  margin: 0 auto;
 }

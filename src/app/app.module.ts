@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ServerComponent } from './server/server.component';
@@ -19,7 +21,6 @@ import { MetricsComponent } from './server/server-profile/metrics/metrics.compon
 import { SslTlsComponent } from './ssl-tls/ssl-tls.component';
 import { ServerProfileComponent } from './server/server-profile/server-profile.component';
 import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
-import { MatIconModule } from '@angular/material/icon';
 import { ConnectToServerComponent } from './server/server-profile/connect-to-server/connect-to-server.component';
 import { DatabaseComponent } from './server/server-profile/database/database.component';
 
@@ -37,7 +38,7 @@ import { DatabaseComponent } from './server/server-profile/database/database.com
     ServerProfileComponent,
     ServerOverviewComponent,
     ConnectToServerComponent,
-    DatabaseComponent
+    DatabaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,8 @@ import { DatabaseComponent } from './server/server-profile/database/database.com
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

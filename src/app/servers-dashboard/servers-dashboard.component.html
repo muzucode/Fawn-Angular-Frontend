@@ -1,6 +1,9 @@
+
 <div class="servers-dashboard">
+
     <h1 id="dashboard-title">Servers</h1>
-    <div id="servers-container">
+    <mat-spinner class="spinner" color="#000" *ngIf="servers.length === 0"></mat-spinner>
+    <div *ngIf="servers.length" id="servers-container">
       <div 
       *ngFor="let server of servers" 
       [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
@@ -8,5 +11,5 @@
       >
         <app-server [data]="server"></app-server>
       </div>
-    </div> 
+    </div>
 </div>

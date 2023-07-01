@@ -1,7 +1,7 @@
 export interface Server {
   Id: number,
   Name: string,
-  Distribution: string,
+  DistributionName: string,
   DistributionVersion: string,
   AddressIPv4: string,
   AddressIPv6: string,

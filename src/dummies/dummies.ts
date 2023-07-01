@@ -8,6 +8,6 @@ export const TEST_SERVER: Server = {
   "PrivateKeyPath": "/path/to/private_key10",
   "GroupId": 10,
   "Description": "Dedicated server for testing new applications and configurations.",
-  "Distribution": "Ubuntu",
+  "DistributionName": "Ubuntu",
   "DistributionVersion": "21.04"
 }
