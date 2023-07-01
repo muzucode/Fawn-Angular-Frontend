@@ -34,7 +34,10 @@ export class ServersService {
       })
     );
   }
-
+  fetchServer(serverId: string): Observable<Server> {
+    console.log('Fetching server')
+    return this.http.get<Server>(`/api/servers/${serverId}`).pipe(take(1));
+  }
 
   getCurrentServer(): Observable<Server> {
     return this.currentServer.asObservable();
@@ -42,10 +45,7 @@ export class ServersService {
   setCurrentServer(server: Server) {
     this.currentServer.next(server)
   }
-  fetchServer(serverId: string): Observable<Server> {
-    console.log('Fetching server')
-    return this.http.get<Server>(`assets/server/${serverId}.json`).pipe(take(1));
-  }
+
   setIsServerPageActive(status: boolean) {
     this.isServerPageActive.next(status)
   }
