@@ -23,6 +23,7 @@ import { ServerProfileComponent } from './server/server-profile/server-profile.c
 import { ServerOverviewComponent } from './server/server-profile/server-overview/server-overview.component';
 import { ConnectToServerComponent } from './server/server-profile/connect-to-server/connect-to-server.component';
 import { DatabaseComponent } from './server/server-profile/database/database.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,11 @@ import { DatabaseComponent } from './server/server-profile/database/database.com
     MatCardModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      positionClass: 'toast-bottom-right',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

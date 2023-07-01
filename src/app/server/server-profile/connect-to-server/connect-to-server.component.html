@@ -5,7 +5,7 @@
   <mat-card class="">
     <mat-card-content>
       <h3>Enter the following into a terminal:</h3> 
-      <p>ssh -i "{{currentServer.PrivateKeyPath}}" ubuntu@{{currentServer.AddressIPv4}}</p><span><mat-icon class="icon mat-icon-outlined" (click)="copyCommand()">content_copy</mat-icon></span>
+      <p>{{sshCommand}}</p><span><mat-icon class="icon mat-icon-outlined" (click)="copyCommand(sshCommand)">content_copy</mat-icon></span>
     </mat-card-content>
   </mat-card>
 </section>
@@ -15,7 +15,7 @@
   <mat-card class="">
     <mat-card-content>
       <h3>Enter the following into a terminal:</h3> 
-      <p>ssh -i "{{currentServer.PrivateKeyPath}}" ubuntu@{{currentServer.AddressIPv4}}</p><span><mat-icon class="icon mat-icon-outlined" (click)="copyCommand()">content_copy</mat-icon></span>
+      <p>{{pemCommand}}</p><span><mat-icon class="icon mat-icon-outlined" (click)="copyCommand(pemCommand)">content_copy</mat-icon></span>
     </mat-card-content>
   </mat-card>
 </section>
