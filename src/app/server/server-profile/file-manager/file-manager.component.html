@@ -1,8 +1,14 @@
 <h2>File Manager</h2>
-<div id="current-dir-path">/ home / <u>sean</u></div>
-<ul *ngIf="files.length > 0; else loading">
-  <li *ngFor="let file of files" class="file">{{file}}</li>
-</ul>
+<div class="content-wrapper">
+  <div class="files-wrapper">
+    <ul *ngIf="files.length > 0; else loading">
+      <li *ngFor="let file of files" class="file">{{file}}</li>
+    </ul>
+  </div>
+  <div id="current-dir-path">/ home / <u>sean</u></div>
+</div>
+
+
 
 <ng-template #loading>
   <mat-spinner class="loading-spinner"></mat-spinner>
