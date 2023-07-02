@@ -1,5 +1,9 @@
 <h2>File Manager</h2>
-<div id="current-dir-path">/ Users / sean / Documents / Coding / Angular / <u>fawn-frontend</u></div>
-<ul>
-  <li *ngFor="let file of files" class="file">{{file.title}}</li>
+<div id="current-dir-path">/ home / <u>sean</u></div>
+<ul *ngIf="files.length > 0; else loading">
+  <li *ngFor="let file of files" class="file">{{file}}</li>
 </ul>
+
+<ng-template #loading>
+  <mat-spinner class="loading-spinner"></mat-spinner>
+</ng-template>

@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { take, tap } from 'rxjs';
+import { skipLast, take, tap } from 'rxjs';
 import { ServersService } from 'src/app/servers.service';
+import { Server } from 'src/types/server';
 
 @Component({
   selector: 'app-file-manager',
@@ -18,15 +19,14 @@ export class FileManagerComponent {
   }
 
   files: any[] = []
+  currentServer!: Server
 
-  ngOnInit() {   
-    this.serversService.fetchFilesFromDir('/')
-    .pipe(
-      tap(file => console.log('Received file: ' + file.title))
-    )
-    .subscribe(file => {
-      this.files.push(file)
-    }).unsubscribe()
+  ngOnInit() {  
+    this.serversService.currentServer.subscribe(server => this.currentServer = server) 
+    this.serversService.fetchFilesFromServer(this.currentServer.Id, '/')
+    .subscribe(files => {
+      this.files = files
+    })
 
   }
 

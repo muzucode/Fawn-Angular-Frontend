@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, from, of, throwError } from 'rxjs';
-import { catchError, retry, take, tap } from 'rxjs/operators';
+import { catchError, map, retry, take, tap } from 'rxjs/operators';
 import { TEST_SERVER } from 'src/dummies/dummies';
 import { Database } from 'src/types/database';
 import { File } from 'src/types/file';
@@ -38,33 +38,30 @@ export class ServersService {
     console.log('Fetching server')
     return this.http.get<Server>(`/api/servers/${serverId}`).pipe(take(1));
   }
-
   getCurrentServer(): Observable<Server> {
     return this.currentServer.asObservable();
   }
   setCurrentServer(server: Server) {
     this.currentServer.next(server)
   }
-
   setIsServerPageActive(status: boolean) {
     this.isServerPageActive.next(status)
   }
-  fetchFilesFromDir(dirPath: string): Observable<File> {
-    // TODO: Send API request with dirPath QSP
-    let files: File[] = [
-      {title: 'File1.txt'},
-      {title: 'README.txt'},
-      {title: 'Another.txt'},
-      {title: 'Lorem.txt'},
-      {title: 'Ipsum.txt'},      
-      {title: 'File1.txt'},
-      {title: 'README.txt'},
-      {title: 'Another.txt'},
-      {title: 'Lorem.txt'},
-      {title: 'Ipsum.txt'},
-    ]
-    
-    return from(files)
+  fetchFilesFromServer(serverId: number, dirPath: string): Observable<string[]> {
+    return this.http.get<string[]>(`/api/servers/${serverId}/files`, {
+      params: {
+        'dirPath': dirPath,
+        'serverId': serverId
+      }
+    }).pipe(
+      tap(res => {
+        console.log('fetchFilesFromServer data:', res)
+      }),
+      catchError(err => {
+        console.log(err)
+        throw 'error in source. Details: ' + err;
+      })
+    )
   }
   fetchSSHKeysOnServer(): Observable<SSHKeypair> {
     let keypairs: Observable<SSHKeypair> = from<SSHKeypair[]>([

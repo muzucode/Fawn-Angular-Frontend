@@ -33,6 +33,5 @@ export class ConnectToServerComponent {
     // copy command to clipboard
     this.clipboard.copy(command)
     this.toastrService.info('Copied to clipboard.')
-
   }
 }
