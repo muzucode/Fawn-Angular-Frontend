@@ -52,6 +52,15 @@ h2.section-heading {
   box-sizing: border-box;
 }
 
+// Buttons
+.btn{
+  color: #fff !important;
+  padding: 1.3rem !important;
+}
+.btn-blue {
+  @extend .btn;
+  background-color: $blue !important;
+}
 
 
 

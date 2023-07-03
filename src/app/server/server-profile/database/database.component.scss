@@ -56,10 +56,7 @@
     bottom: 2px;
     left: 10px;
   }
-  .backup {
-    background-color: $blue;
-    color: #fff;
-    margin: -1rem 0 0 3rem;
-    padding: 1.3rem;
-  }
+}
+#backup-btn {
+  margin: -1rem 0 0 2rem !important;
 }

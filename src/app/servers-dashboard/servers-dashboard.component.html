@@ -1,15 +1,20 @@
 
 <div class="servers-dashboard">
 
+  <div class="title-wrapper">
     <h1 id="dashboard-title">Servers</h1>
-    <mat-spinner class="spinner" color="#000" *ngIf="servers.length === 0"></mat-spinner>
-    <div *ngIf="servers.length" id="servers-container">
-      <div 
-      *ngFor="let server of servers" 
-      [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
-      [routerLink]="['/servers', server.Id]"
-      >
-        <app-server [data]="server"></app-server>
-      </div>
+    <button id="add-server-btn" class="btn-blue" mat-button>Add Server<mat-icon class="icon mat-icon-outlined">add</mat-icon></button>
+  </div>
+
+  <mat-spinner class="spinner" color="#000" *ngIf="servers.length === 0"></mat-spinner>
+  <div *ngIf="servers.length" id="servers-container">
+    <div 
+    *ngFor="let server of servers" 
+    [ngClass]="['server', isCurrentServer(server) ? 'is-current' : '']"
+    [routerLink]="['/servers', server.Id]"
+    >
+      <app-server [data]="server"></app-server>
     </div>
+  </div>
+
 </div>
