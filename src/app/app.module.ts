@@ -10,6 +10,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ServersDashboardComponent } from './servers-dashboard/servers-dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
@@ -50,7 +52,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatDialogModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       progressBar: true,

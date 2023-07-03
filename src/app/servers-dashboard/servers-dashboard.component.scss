@@ -1,13 +1,10 @@
 @import 'src/styles/colors.scss';
 
 .servers-dashboard {
-  .title-wrapper {
-    margin-bottom: 1rem;
     #dashboard-title {
       font-family: 'Roboto';
       color: #252525;
       display: inline;
-    }
   }
 
   #servers-container {

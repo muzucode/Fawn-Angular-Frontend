@@ -1,4 +1,8 @@
-<h2>Databases</h2>
+<div class="page-title-wrapper">
+  <h1 class="page-title">Databases</h1>
+  <button id="add-database-btn" class="btn-blue" (click)="toggleAddDatabaseModal()" mat-button>Add Database<mat-icon class="icon mat-icon-outlined">add</mat-icon></button>
+</div>
+
 
 <div class="wrapper">
   <div id="database-list">
@@ -17,3 +21,11 @@
     <button class="btn-blue" id="backup-btn" mat-button>Download Backup<mat-icon class="icon mat-icon-outlined">cloud_download</mat-icon></button>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div *ngIf="isAddDatabaseModalVisible" class="modal">
+  <div class="overlay"></div>
+    <form></form>
+</div>
+

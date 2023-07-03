@@ -1,4 +1,7 @@
 @import 'src/styles/colors';
+.page-title {
+  display: inline;
+}
 
 .wrapper {
   display: flex;
@@ -59,4 +62,31 @@
 }
 #backup-btn {
   margin: -1rem 0 0 2rem !important;
+}
+#add-database-btn {
+  margin: -1rem 0 0 2rem !important;
+}
+.modal {
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .overlay {
+    background-color: #000;
+    opacity: .6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  form {
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    position: relative;
+    top: calc(50% - 300px);
+    left: calc(50% - 250px);
+    box-shadow: 0 0 20px #00000060;
+  }
 }

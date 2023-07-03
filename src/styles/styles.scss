@@ -62,7 +62,10 @@ h2.section-heading {
   background-color: $blue !important;
 }
 
-
+// Spacing
+.page-title-wrapper {
+  margin-bottom: 2rem;
+}
 
 // Material Spinner
 .mat-mdc-progress-spinner circle {

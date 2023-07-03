@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import { ServersService } from 'src/app/servers.service';
 import { Database } from 'src/types/database';
 
@@ -10,11 +11,13 @@ import { Database } from 'src/types/database';
 export class DatabaseComponent {
 
   constructor(
-    private serversSerivce: ServersService
+    private serversSerivce: ServersService,
+    public dialog: MatDialog
   ){}
 
   databases: Database[] = []
   currentDatabase!: Database
+  isAddDatabaseModalVisible: boolean = false
 
   ngOnInit() {
     this.serversSerivce.fetchDatabasesOnServer()
@@ -23,5 +26,13 @@ export class DatabaseComponent {
       console.log(database)
       this.databases.push(database)
     })
+  }
+
+  toggleAddDatabaseModal() {
+    this.isAddDatabaseModalVisible = !this.isAddDatabaseModalVisible
+  }
+  @HostListener('document:keydown.escape')
+  onEscapeKey() {
+    this.isAddDatabaseModalVisible = false;
   }
 }
