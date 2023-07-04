@@ -17,7 +17,7 @@ export class DatabaseComponent {
 
   databases: Database[] = []
   currentDatabase!: Database
-  isAddDatabaseModalVisible: boolean = false
+  isAddDatabaseModalVisible: boolean = true
 
   ngOnInit() {
     this.serversSerivce.fetchDatabasesOnServer()

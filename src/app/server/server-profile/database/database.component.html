@@ -26,6 +26,29 @@
 <!-- Modal -->
 <div *ngIf="isAddDatabaseModalVisible" class="modal">
   <div class="overlay"></div>
-    <form></form>
+    <form>
+      <div class="title">
+        <h2>Add a database</h2>
+      </div>
+      <div class="content">
+        <label for="platform">Platform:</label>
+        <select name="platform">
+          <option value="mysql">MySQL</option>
+          <option value="postgresql">PostgreSQL</option>
+        </select>
+  
+        <label for="name">Name:</label>
+        <input name="name" type="text">  
+
+        <label for="username">Username:</label>
+        <input name="username" type="text">
+
+        <label for="password">Password:</label>
+        <input name="password" type="password">
+
+        <button class="btn-blue submit">Confirm</button>
+      </div>
+
+    </form>
 </div>
 

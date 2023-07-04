@@ -56,10 +56,23 @@ h2.section-heading {
 .btn{
   color: #fff !important;
   padding: 1.3rem !important;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  transition: background-color .2s ease-in-out;
+  box-shadow: 0 3px 4px darken($blue, 20%);
+  &:hover {
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+  }
 }
 .btn-blue {
   @extend .btn;
   background-color: $blue !important;
+  &:hover {
+    background-color: darken($blue, 8%) !important;
+  }
 }
 
 // Spacing
@@ -70,4 +83,48 @@ h2.section-heading {
 // Material Spinner
 .mat-mdc-progress-spinner circle {
   stroke: $blue;
+}
+
+// Forms
+form {
+  .title {
+    padding: 1rem;
+    background-color: $blue;
+    border-bottom: 10px solid lighten($blue, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    margin: 0 !important;
+    padding: 0;
+    color: #fff;
+    font-size: 1.8rem !important;
+    position: relative;
+    top: 2px;
+  }
+  label {
+    font-size: .9rem;
+    display: block;
+    color: lighten(#000, 60%);
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid lighten(#000, 70%);
+    padding: .5rem 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  select {
+    padding: .5rem;
+  }
+  input, select {
+    margin: .3rem 0 1.5rem 0;
+    min-width: 300px;
+    font-size: 1.2rem;
+  }
+  button.submit {
+    display: block;
+  }
 }
