@@ -27,24 +27,27 @@ export class ServersDashboardComponent {
   // Modal - Distribution Items
   distributionItems: DistributionItem[] = [
     {
-      name: 'MySQL',
+      name: 'Ubuntu',
       availableVersions: ['22.0', '22.1', '22.2']
     },    
     {
-      name: 'MariaDB',
-      availableVersions: ['19.0', '19.1', '19.2']
+      name: 'MacOS',
+      availableVersions: ['Sierra', 'Catalina', 'Big Sur']
     },    
     {
-      name: 'PostgreSQL',
-      availableVersions: ['18.0', '18.1', '18.2']
+      name: 'Linux Mint',
+      availableVersions: ['22.0', '22.1', '22.2']
     },    
     {
-      name: 'MongoDB',
-      availableVersions: ['5.0', '5.1', '7.0']
+      name: 'Windows',
+      availableVersions: ['XP', '10', '11']
     },
   ]
   selectedDistributionItem: DistributionItem = this.distributionItems[0] // default option
   selectedDistributionItemVersion: string = this.selectedDistributionItem.availableVersions[0] ?? ''
+  serverName: string = ''
+  serverUsername: string = ''
+  serverPathToPrivateKey: string = ''
 
   
   servers!: Server[]
@@ -81,4 +84,7 @@ export class ServersDashboardComponent {
     this.isAddServerModalVisible = false;
   }
 
+  addServer() {
+    
+  }
 }

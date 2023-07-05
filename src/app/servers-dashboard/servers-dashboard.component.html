@@ -39,15 +39,15 @@
         </select>
   
         <label for="name">Name:</label>
-        <input name="name" type="text">  
+        <input [(ngModel)]="serverName" name="name" type="text">  
 
         <label for="username">Username:</label>
-        <input name="username" type="text">
+        <input [(ngModel)]="serverUsername" name="username" type="text">
 
         <label for="path-to-private-key">Path to Private Key (SSH):</label>
-        <input name="path-to-private-key" type="text">
+        <input [(ngModel)]="serverPathToPrivateKey" name="path-to-private-key" type="text">
 
-        <button class="btn-blue submit">Confirm</button>
+        <button class="btn-blue submit" (click)="addServer()">Confirm</button>
       </div>
 
     </form>
