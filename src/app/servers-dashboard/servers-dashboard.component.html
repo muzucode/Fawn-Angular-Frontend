@@ -3,7 +3,7 @@
 
   <div class="page-title-wrapper">
     <h1 id="dashboard-title">Servers</h1>
-    <button id="add-server-btn" class="btn-blue" mat-button>Add Server<mat-icon class="icon mat-icon-outlined">add</mat-icon></button>
+    <button id="add-server-btn" class="btn-blue" (click)="isAddServerModalVisible = true" mat-button>Add Server<mat-icon class="icon mat-icon-outlined">add</mat-icon></button>
   </div>
 
   <mat-spinner class="spinner" color="#000" *ngIf="servers.length === 0"></mat-spinner>
@@ -17,4 +17,38 @@
     </div>
   </div>
 
+</div>
+
+
+<!-- Modal -->
+<div *ngIf="isAddServerModalVisible" class="modal">
+  <div class="overlay"></div>
+    <form>
+      <div class="close"><mat-icon class="icon mat-icon-outlined" (click)="toggleAddDatabaseModal()">close</mat-icon></div>
+      <div class="title">
+        <h2>Add a Server</h2>
+      </div>
+      <div class="content">
+        <label for="distribution-name">Distribution:</label>
+        <select [(ngModel)]="selectedDistributionItem" name="distribution-name">
+          <option *ngFor="let distributionItem of distributionItems" [ngValue]="distributionItem">{{distributionItem.name}}</option>
+        </select>        
+        <label for="distribution-version">Version:</label>
+        <select [(ngModel)]="selectedDistributionItemVersion" name="distribution-version">
+          <option *ngFor="let distributionVersion of selectedDistributionItem.availableVersions" [ngValue]="distributionVersion">{{distributionVersion}}</option>
+        </select>
+  
+        <label for="name">Name:</label>
+        <input name="name" type="text">  
+
+        <label for="username">Username:</label>
+        <input name="username" type="text">
+
+        <label for="path-to-private-key">Path to Private Key (SSH):</label>
+        <input name="path-to-private-key" type="text">
+
+        <button class="btn-blue submit">Confirm</button>
+      </div>
+
+    </form>
 </div>

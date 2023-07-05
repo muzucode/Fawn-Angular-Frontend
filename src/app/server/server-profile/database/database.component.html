@@ -27,8 +27,9 @@
 <div *ngIf="isAddDatabaseModalVisible" class="modal">
   <div class="overlay"></div>
     <form>
+      <div class="close"><mat-icon class="icon mat-icon-outlined" (click)="toggleAddDatabaseModal()">close</mat-icon></div>
       <div class="title">
-        <h2>Add a database</h2>
+        <h2>Add a Database</h2>
       </div>
       <div class="content">
         <label for="platform">Platform:</label>
