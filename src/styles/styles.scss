@@ -126,18 +126,21 @@ form {
     display: block;
     color: lighten(#000, 60%);
   }
-  input {
+  input, textarea {
     border: none;
     border-bottom: 1px solid lighten(#000, 70%);
-    padding: .5rem 0;
+    padding: .2rem 0;
     &:focus {
       outline: none;
+    }
+    &::placeholder {
+      opacity: .3;
     }
   }
   select {
     padding: .5rem;
   }
-  input, select {
+  input, select, textarea {
     margin: .3rem 0 1.5rem 0;
     min-width: 300px;
     font-size: 1.2rem;

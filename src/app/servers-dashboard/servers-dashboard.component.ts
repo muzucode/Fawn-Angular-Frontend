@@ -17,6 +17,7 @@ export class ServersDashboardComponent {
   constructor(
     private serversService: ServersService,
     private route: ActivatedRoute,
+    private http: HttpClient
     ) {
     
   }
@@ -43,11 +44,14 @@ export class ServersDashboardComponent {
       availableVersions: ['XP', '10', '11']
     },
   ]
+
   selectedDistributionItem: DistributionItem = this.distributionItems[0] // default option
   selectedDistributionItemVersion: string = this.selectedDistributionItem.availableVersions[0] ?? ''
   serverName: string = ''
   serverUsername: string = ''
   serverPathToPrivateKey: string = ''
+  serverAddressIPv4: string = ''
+  serverDescription: string = ''
 
   
   servers!: Server[]
@@ -85,6 +89,18 @@ export class ServersDashboardComponent {
   }
 
   addServer() {
-    
+    const server: Server = {
+      Id: 0, // TODO: This should autoincrement on the DB side
+      Name: this.serverName,
+      DistributionName: this.selectedDistributionItem.name,
+      DistributionVersion: this.selectedDistributionItemVersion,
+      AddressIPv4: this.serverAddressIPv4,
+      PrivateKeyPath: this.serverPathToPrivateKey,
+      GroupId: 2, // TODO: Implement groups before changing this hardcoded value
+      Description: this.serverDescription,
+    }
+    this.http.post('/api/servers', server).pipe().subscribe(res => {
+      console.log(res)
+    })
   }
 }

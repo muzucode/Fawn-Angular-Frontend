@@ -39,13 +39,20 @@
         </select>
   
         <label for="name">Name:</label>
-        <input [(ngModel)]="serverName" name="name" type="text">  
+        <input [(ngModel)]="serverName" name="name" type="text" placeholder="WebServer">  
 
         <label for="username">Username:</label>
-        <input [(ngModel)]="serverUsername" name="username" type="text">
+        <input [(ngModel)]="serverUsername" name="username" type="text" placeholder="ubuntu">
+
+        <label for="address-ipv4">Address (IPv4):</label>
+        <input [(ngModel)]="serverAddressIPv4" name="address-ipv4" type="text" placeholder="127.0.0.1">
 
         <label for="path-to-private-key">Path to Private Key (SSH):</label>
-        <input [(ngModel)]="serverPathToPrivateKey" name="path-to-private-key" type="text">
+        <input [(ngModel)]="serverPathToPrivateKey" name="path-to-private-key" type="text" placeholder="/Users/John/.ssh/my-rsa-key.rsa">
+
+        <!-- TODO: Implement Description field -->
+        <!-- <label for="description">Description</label>
+        <textarea [(ngModel)]="serverDescription" name="description" placeholder="Host all of my websites"></textarea> -->
 
         <button class="btn-blue submit" (click)="addServer()">Confirm</button>
       </div>
